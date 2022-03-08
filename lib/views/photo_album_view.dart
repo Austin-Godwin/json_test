@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:json_test/model/PhotoAlbum.dart';
 import 'package:json_test/routes/routes_name.dart';
-import 'package:json_test/services/navigation_service.dart';
+import 'package:json_test/views/single_photo_view.dart';
+// import 'package:json_test/services/navigation_service.dart';
 import 'package:json_test/views/view_models/photo_album_view_model.dart';
 import '../widgets/resturant_card.dart';
 
@@ -40,7 +41,10 @@ class _PhotoAlbumViewState extends State<PhotoAlbumView> {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount:  2),
                 itemBuilder: (context, index) => RestaurantCard(
-                  // onTap: photoAlbumViewModel.getData,
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SinglePhotoView())),
+                  // photoAlbumViewModel.getData,
                   image: allAlbum[index].thumbnailUrl,
                   // "https://images.unsplash.com/photo-1640622300473-977435c38c04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
                 ),
