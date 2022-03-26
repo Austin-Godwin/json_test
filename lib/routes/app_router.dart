@@ -8,8 +8,8 @@ class AppRouter {
     switch(settings.name) {
       case PhotoAlbumViewRoute:
         return MaterialPageRoute(builder: (context) => const PhotoAlbumView());
-      case SinglephotoViewRoute:
-        return MaterialPageRoute(builder: (context) => SinglePhotoView());
+      // case SinglephotoViewRoute:
+      //   return MaterialPageRoute(builder: (context) => SinglePhotoView(photoUrl: ,));
       default:
         return MaterialPageRoute(builder: (context) => const Scaffold());
     }
